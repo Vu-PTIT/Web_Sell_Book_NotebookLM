@@ -1,0 +1,97 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chatbot</title>
+		<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712035.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/chat.css">
+	</head>
+	<body>
+	 <header class="header">
+        <div class="header-1">
+            <a href="index.html" class="logo"><i class="fas fa-book"></i>Bo<span>ok.ptit</span></a>
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="Search here..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <div id="login-btn" class="fas fa-user"></div>
+                <a href="chat.html" class="fas fa-comments"></a>
+            </div>
+        </div>
+    </header>
+	
+    <section class="chat-section">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                
+                <div class="col-md-7">
+                    <div class="card chat-card">
+                        <div class="card-header msg_head">
+                            <div class="d-flex bd-highlight">
+                                <div class="img_cont">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" class="rounded-circle user_img">
+                                    <span class="online_icon"></span>
+                                </div>
+                                <div class="user_info">
+                                    <span>Chatbot</span>
+                                    <p>Ask me anything about your books!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="messageFormeight" class="card-body msg_card_body">
+                            </div>
+                        <div class="card-footer">
+                            <form id="messageArea" class="input-group">
+                                <input type="text" id="text" name="msg" placeholder="Type your message..." autocomplete="off" class="form-control type_msg" required/>
+                                <div class="input-group-append">
+                                    <button type="submit" id="send" class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="upload-container">
+                        <form id="uploadForm" enctype="multipart/form-data">
+							<h3 class="upload-title"><i class="fas fa-book-open mr-2"></i>Upload & Analyze</h3>
+							<p>Upload a book file (.pdf) to ask questions about its content.</p>
+
+							<label for="fileInput" class="custom-file-upload">
+								<i class="fas fa-upload"></i> Choose File
+							</label>
+							<input id="fileInput" type="file" name="file" accept=".pdf,.txt,.docx,.png,.jpg,.jpeg,.gif" required>
+
+							<button type="submit" class="btn upload-btn">Upload</button>
+
+							<!-- Hiển thị tên file -->
+							<div id="fileNameDisplay" class="file-name-display"></div>
+
+							<!-- Nếu là hình ảnh sẽ hiển thị ở đây -->
+							<div id="filePreviewContainer" class="file-preview-container"></div>
+
+							<!-- Upload result -->
+							<div id="uploadStatus" class="upload-status"></div>
+						</form>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+	<script src="../Js/chat.js"></script>
+
+    </body>
+</html>

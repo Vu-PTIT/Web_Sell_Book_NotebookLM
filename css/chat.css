@@ -1,0 +1,483 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(135deg, #3a6073, #16222a);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* === Upload Sidebar === */
+.upload-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 15px;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    z-index: 999;
+}
+
+.sidebar-title {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Ẩn input mặc định */
+#fileInput {
+    display: none;
+}
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Nút chọn file đẹp */
+.custom-file-upload {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+	margin: 0;
+}
+.custom-file-upload:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Nút Upload */
+.upload-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+	margin: 0;
+}
+.upload-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Status text */
+.upload-status {
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 10px;
+    word-wrap: break-word;
+}
+
+
+.chat{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.card{
+	height: 500px;
+	border-radius: 15px !important;
+	background-color: rgba(0,0,0,0.4) !important;
+}
+.contacts_body{
+	padding:  0.75rem 0 !important;
+	overflow-y: auto;
+	white-space: nowrap;
+}
+.msg_card_body{
+	overflow-y: auto;
+}
+.card-header{
+	border-radius: 15px 15px 0 0 !important;
+	border-bottom: 0 !important;
+}
+.card-footer{
+border-radius: 0 0 15px 15px !important;
+	border-top: 0 !important;
+}
+.container{
+	align-content: center;
+}
+.search{
+	border-radius: 15px 0 0 15px !important;
+	background-color: rgba(0,0,0,0.3) !important;
+	border:0 !important;
+	color:white !important;
+}
+.search:focus{
+	 box-shadow:none !important;
+   outline:0px !important;
+}
+.type_msg{
+	background-color: rgba(0,0,0,0.3) !important;
+	border:0 !important;
+	color:white !important;
+	height: 60px !important;
+	overflow-y: auto;
+}
+	.type_msg:focus{
+	 box-shadow:none !important;
+   outline:0px !important;
+}
+.attach_btn{
+	border-radius: 15px 0 0 15px !important;
+	background-color: rgba(0,0,0,0.3) !important;
+	border:0 !important;
+	color: white !important;
+	cursor: pointer;
+}
+.send_btn{
+	border-radius: 0 15px 15px 0 !important;
+	background-color: rgba(0,0,0,0.3) !important;
+	border:0 !important;
+	color: white !important;
+	cursor: pointer;
+}
+.search_btn{
+	border-radius: 0 15px 15px 0 !important;
+	background-color: rgba(0,0,0,0.3) !important;
+	border:0 !important;
+	color: white !important;
+	cursor: pointer;
+}
+.contacts{
+	list-style: none;
+	padding: 0;
+}
+.contacts li{
+	width: 100% !important;
+	padding: 5px 10px;
+	margin-bottom: 15px !important;
+}
+.active{
+	background-color: rgba(0,0,0,0.3);
+}
+.user_img{
+	height: 70px;
+	width: 70px;
+	border:1.5px solid #f5f6fa;
+
+}
+.user_img_msg{
+	height: 40px;
+	width: 40px;
+	border:1.5px solid #f5f6fa;
+
+}
+.img_cont{
+	position: relative;
+	height: 70px;
+	width: 70px;
+}
+.img_cont_msg{
+	height: 40px;
+	width: 40px;
+}
+.online_icon{
+	position: absolute;
+	height: 15px;
+	width:15px;
+	background-color: #4cd137;
+	border-radius: 50%;
+	bottom: 0.2em;
+	right: 0.4em;
+	border:1.5px solid white;
+}
+.offline{
+	background-color: #c23616 !important;
+}
+.user_info{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 15px;
+}
+.user_info span{
+	font-size: 20px;
+	color: white;
+}
+.user_info p{
+	font-size: 10px;
+	color: rgba(255,255,255,0.6);
+}
+.video_cam{
+	margin-left: 50px;
+	margin-top: 5px;
+}
+.video_cam span{
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+	margin-right: 20px;
+}
+.msg_cotainer{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 10px;
+	border-radius: 25px;
+	background-color: rgb(82, 172, 255);
+	padding: 10px;
+	position: relative;
+	background-color: #007bff;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.msg_cotainer_send{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 10px;
+	border-radius: 25px;
+	background-color: #58cc71;
+	padding: 10px;
+	position: relative;
+	background-color: #007bff;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.msg_time{
+	position: absolute;
+	left: 0;
+	bottom: -15px;
+	color: rgba(255,255,255,0.5);
+	font-size: 10px;
+}
+.msg_time_send{
+	position: absolute;
+	right:0;
+	bottom: -15px;
+	color: rgba(255,255,255,0.5);
+	font-size: 10px;
+}
+.msg_head{
+	position: relative;
+}
+#action_menu_btn{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: white;
+	cursor: pointer;
+	font-size: 20px;
+}
+.action_menu{
+	z-index: 1;
+	position: absolute;
+	padding: 15px 0;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	border-radius: 15px;
+	top: 30px;
+	right: 15px;
+	display: none;
+}
+.action_menu ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.action_menu ul li{
+	width: 100%;
+	padding: 10px 15px;
+	margin-bottom: 5px;
+}
+.action_menu ul li i{
+	padding-right: 10px;
+}
+.action_menu ul li:hover{
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.2);
+}
+.user_img, .user_img_msg {
+    object-fit: cover;
+    box-shadow: 0 0 6px rgba(255,255,255,0.3);
+}
+.type_msg, .send_btn {
+    transition: all 0.3s ease-in-out;
+}
+
+.send_btn:hover {
+    background-color: #007bff !important;
+    color: white !important;
+}
+@media(max-width: 576px){
+	.contacts_card{
+	margin-bottom: 15px !important;
+}
+}
+/* Reset body để khớp style chung */
+body, html {
+    height: auto;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f7f7f7; /* giống style.css */
+}
+
+/* Card chat chỉnh nền cho nhẹ hơn */
+.card {
+    height: 500px;
+    border-radius: 10px;
+    background-color: #fff !important;
+    box-shadow: var(--box-shadow); /* dùng biến đã định nghĩa */
+}
+
+/* Phần header trong khung chat */
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+    border-bottom: 1px solid #ddd !important;
+    background: var(--gray);
+}
+
+/* Phần footer (input gửi tin nhắn) */
+.card-footer {
+    border-radius: 0 0 10px 10px !important;
+    border-top: 1px solid #ddd !important;
+    background: #fff;
+}
+
+/* Ô nhập và nút gửi */
+.type_msg {
+    background: #f1f1f1 !important;
+    color: #333 !important;
+    height: 60px !important;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc !important;
+}
+
+.send_btn {
+    background: black !important;
+    color: white !important;
+    border-radius: .5rem;
+    margin-left: .5rem;
+    padding: 0 1rem;
+    transition: background 0.3s;
+}
+.send_btn:hover {
+    background: var(--dark-color) !important;
+}
+
+/* Tin nhắn gửi và nhận */
+.msg_cotainer, .msg_cotainer_send {
+    border-radius: 1.5rem;
+    padding: 10px 15px;
+    max-width: 70%;
+    font-size: 0.9rem;
+    background: #eee;
+    color: black;
+    box-shadow: var(--box-shadow);
+}
+.msg_cotainer_send {
+    background: var(--gray);
+    color: white;
+}
+
+/* Thời gian */
+.msg_time, .msg_time_send {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+/* Upload */
+.upload-container {
+    background: #fff;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+
+.upload-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.custom-file-upload {
+    background: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.custom-file-upload:hover {
+    background: var(--gray);
+    color: white;
+}
+
+.upload-status {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--light-color);
+}
+
+.btn {
+    background: black;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: .5rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+	margin: 0;
+}
+.btn:hover {
+    background: var(--dark-color);
+}
+.file-name-display {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--light-color);
+    font-style: italic;
+}
+
+/* Preview ảnh */
+.file-preview-container {
+    margin-top: 1rem;
+    max-width: 100%;
+}
+.file-preview-container img {
+    max-width: 10%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin-top: 0.5rem;
+}
+.file-preview-wrapper{
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin-top: 0.5rem;
+}
+.footer .box-container .box .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer .box-container .box .contact-row .contact-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer .box-container .box .contact-row img.map {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
