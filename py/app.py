@@ -32,15 +32,14 @@ app.mount("/Js", StaticFiles(directory="Js"), name="Js")
 app.mount("/image", StaticFiles(directory="image"), name="image")
 templates = Jinja2Templates(directory=os.path.join(os.path.dirname('bai_tap_lon_js'), "html"))
 
-# --- Cấu hình Pinecone & LangChain (Phần lớn không thay đổi) ---
 
-# Lưu ý: Đã sửa tên chỉ mục thành "chatbot" để nhất quán với store_index.py
-# Bạn nên đảm bảo store_index.py cũng sử dụng "chatbot".
+
+
 PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
 os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
 
 embeddings = download_hugging_face_embeddings()
-index_name = "chatbot"  # Tên chỉ mục nhất quán
+index_name = "chatbot"  
 
 # Kết nối với chỉ mục Pinecone hiện có
 docsearch = PineconeVectorStore.from_existing_index(
@@ -78,15 +77,9 @@ Youtube_chain = create_stuff_documents_chain(llm, prompt)
 rag_chain = create_retrieval_chain(retriever, Youtube_chain)
 
 
-# --- Định nghĩa các điểm cuối (Routes) của FastAPI ---
 
 @app.post("/upload")
 async def upload_file(file: UploadFile = File(...)):
-    """
-    Điểm cuối để xử lý việc tải lên tệp. Nó nhận một tệp,
-    lưu nó vào thư mục UPLOAD_FOLDER, và sau đó
-    gọi hàm load_data để xử lý và lập chỉ mục cho tệp.
-    """
     try:
         filename = secure_filename(file.filename)
         filepath = os.path.join(UPLOAD_FOLDER, filename)
@@ -119,10 +112,6 @@ async def get_chat(request: Request):
 
 @app.post("/get")
 async def chat(msg: str = Form(...)):
-    """
-    Xử lý các tin nhắn trò chuyện đến từ người dùng.
-    Nó sử dụng chuỗi RAG để tạo ra một câu trả lời.
-    """
     try:
         # Gọi chuỗi RAG một cách bất đồng bộ để có hiệu suất tốt hơn
         response = await rag_chain.ainvoke({"input": msg})

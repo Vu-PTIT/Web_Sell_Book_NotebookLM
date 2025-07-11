@@ -5,12 +5,16 @@ $(document).ready(function() {
         const minute = date.getMinutes();
         const str_time = hour+":"+minute;
         var rawText = $("#text").val();
-
-        var userHtml = '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' + rawText + '<span class="msg_time_send">'+ str_time + '</span></div><div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div></div>';
-        
+        var userHtml = '<div class="d-flex justify-content-end mb-4">' +
+                        '<div class="msg_cotainer_send">' + rawText +
+                            '<span class="msg_time_send">' + str_time + '</span>' +
+                        '</div>' +
+                        '<div class="img_cont_msg">' +
+                            '<img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg">' +
+                        '</div>' +
+               '</div>';
         $("#text").val("");
         $("#messageFormeight").append(userHtml);
-
         $.ajax({
             data: {
                 msg: rawText,	
@@ -18,7 +22,14 @@ $(document).ready(function() {
             type: "POST",
             url: "/get",
         }).done(function(data) {
-            var botHtml = '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://cdn-icons-png.flaticon.com/512/387/387569.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' + data + '<span class="msg_time">' + str_time + '</span></div></div>';
+            var botHtml = '<div class="d-flex justify-content-start mb-4">' +
+                                '<div class="img_cont_msg">' +
+                                    '<img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" class="rounded-circle user_img_msg">' +
+                                '</div>' +
+                                '<div class="msg_cotainer">' + data +
+                                    '<span class="msg_time">' + str_time + '</span>' +
+                                '</div>' +
+                            '</div>';
             $("#messageFormeight").append($.parseHTML(botHtml));
         });
         event.preventDefault();
@@ -46,14 +57,10 @@ $("#fileInput").on("change", function () {
     const display = $("#fileNameDisplay");
     previewContainer.empty();
     display.empty();
-
     if (!file) return;
-
     const fileName = file.name;
     const isImage = file.type.startsWith("image/");
-
     if (isImage) {
-        // Xem trước hình ảnh
         const reader = new FileReader();
         reader.onload = function (e) {
             const img = $("<img>").attr("src", e.target.result);

@@ -4,7 +4,7 @@ body, html {
     background: linear-gradient(135deg, #3a6073, #16222a);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-/* === Upload Sidebar === */
+
 .upload-sidebar {
     position: fixed;
     top: 0;
@@ -75,7 +75,7 @@ a:hover {
     color: white;
 }
 
-/* Status text */
+
 .upload-status {
     color: #ccc;
     font-size: 12px;
@@ -475,6 +475,11 @@ body, html {
     flex-direction: column;
     gap: 0.5rem;
 }
+
+#text {
+    text-transform: none !important;
+}
+
 
 .footer .box-container .box .contact-row img.map {
     width: 150px;

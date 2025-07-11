@@ -22,7 +22,7 @@ def load_data():
     # THAY ĐỔI: Đảm bảo tên chỉ mục khớp với tệp app.py
     index_name = "chatbot" # Đã thay đổi từ "chatbot2" thành "chatbot"
 
-
+    '''
     pc.create_index(
         name=index_name,
         dimension=384, 
@@ -32,7 +32,7 @@ def load_data():
             region="us-east-1"
         ) 
     ) 
-
+    '''
     docsearch = PineconeVectorStore.from_documents(
         documents=text_chunks,
         index_name=index_name,

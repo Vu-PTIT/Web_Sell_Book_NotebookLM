@@ -66,7 +66,7 @@ const swiper1 = new Swiper(".featured-slider", {
         delay: 5200,
         disableOnInteraction: false,
     },
-    navigator: {
+    navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
@@ -87,7 +87,7 @@ const swiper1 = new Swiper(".featured-slider", {
         },
     },
 });
-let swiper3 = new Swiper(".arrivals-slider", {
+let swiper2 = new Swiper(".arrivals-slider", {
     spaceBetween: 10,
     loop: true,
     centeredSlides: true,
@@ -107,7 +107,7 @@ let swiper3 = new Swiper(".arrivals-slider", {
         },
     },
 });
-let swiper4 = new Swiper(".reviews-slider", {
+let swiper3 = new Swiper(".reviews-slider", {
     spaceBetween: 10,
     grabCursor: true,
     loop: true,
@@ -128,7 +128,7 @@ let swiper4 = new Swiper(".reviews-slider", {
         },
     },
 });
-let swiper5 = new Swiper(".blogs-slider", {
+let swiper4 = new Swiper(".blogs-slider", {
     spaceBetween: 10,
     grabCursor: true,
     loop: true,

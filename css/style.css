@@ -218,23 +218,26 @@
     }
     
     .login-form-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(2, 2, 2, 0.14);
-        position: fixed;
-        top: 0;
-        right: -105%;
-        z-index: 10000;
-        height: 100%;
-        width: 100%;
-        transition: all .6s ease-out;
-    }
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 2, 2, 0.14);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none; 
+    transition: opacity 0.5s ease;
+}
+
     .login-form-container.active {
-        right: 0;
+    opacity: 1;
+    pointer-events: all;
     }
-    
+ 
     .login-form-container form {
         background: #fff;
         border: 1px solid white;
@@ -307,8 +310,9 @@
         text-align: center;
         font-size: 3rem;
         color: #444;
+        cursor: pointer;
     }
-    
+   
     .Home-books {
         background: url("../image/banner-bg.jpg") no-repeat;
         background-size: cover;
@@ -356,8 +360,7 @@
         line-height: 2;
         padding: 1rem 0;
     }
-    /*icons section*/
-    
+   
     .icon-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
