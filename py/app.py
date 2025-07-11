@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 import os
 import uvicorn
 from werkzeug.utils import secure_filename
-from store_index import load_data  # Giả sử load_data được đồng bộ
+from store_index import load_data 
 from helper import download_hugging_face_embeddings
 
 # Tải các biến môi trường
@@ -113,19 +113,18 @@ async def get_chat(request: Request):
 @app.post("/get")
 async def chat(msg: str = Form(...)):
     try:
-        # Gọi chuỗi RAG một cách bất đồng bộ để có hiệu suất tốt hơn
+        
         response = await rag_chain.ainvoke({"input": msg})
         answer = response.get("answer", "Sorry, I could not process an answer.")
         print(f"Input: {msg}")
         print(f"Response: {answer}")
-        
-        # Trả về câu trả lời dưới dạng văn bản thuần túy, như frontend mong đợi
+
         return PlainTextResponse(content=answer)
     except Exception as e:
         print(f"Error during chat: {e}")
         return PlainTextResponse(content="An error occurred while processing your request.", status_code=500)
 
 
-# Chạy máy chủ bằng uvicorn
+
 if __name__ == '__main__':
     uvicorn.run("app:app",  host="127.0.0.1", port=8000, reload=True)

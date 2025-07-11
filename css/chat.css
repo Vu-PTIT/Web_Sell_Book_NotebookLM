@@ -129,7 +129,7 @@ border-radius: 0 0 15px 15px !important;
 	height: 60px !important;
 	overflow-y: auto;
 }
-	.type_msg:focus{
+.type_msg:focus{
 	 box-shadow:none !important;
    outline:0px !important;
 }
@@ -485,4 +485,8 @@ body, html {
     width: 150px;
     height: auto;
     object-fit: contain;
+}
+
+.msg_cotainer, .msg_cotainer_send {
+    text-transform: none !important;
 }

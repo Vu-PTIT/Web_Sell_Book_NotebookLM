@@ -12,7 +12,7 @@
         transition: width none;
     }
     
-     :root {
+    :root {
         --gray: rgb(197, 197, 196);
         --dark-color: rgba(139, 139, 138, 0.786);
         --black: #444;
@@ -747,7 +747,7 @@
     .loader-container img {
         height: 10rem;
     }
-    /*media queries*/
+
     
     @media(max-width: 991px) {
         html {
